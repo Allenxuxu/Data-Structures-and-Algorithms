@@ -5,7 +5,7 @@ import "testing"
 func TestStaticStack(t *testing.T) {
 	s := NewStaticStack(10)
 
-	if s.IsEmpty() != true {
+	if s.Length() != 0 {
 		t.Fatal()
 	}
 	if s.Length() != 0 {
@@ -38,7 +38,7 @@ func TestStaticStack_Push(t *testing.T) {
 	if v.(int) != 1 {
 		t.Fatal()
 	}
-	if s.IsEmpty() == true {
+	if s.Length() != 0 {
 		t.Fatal()
 	}
 	if s.Capacity() != 10 {

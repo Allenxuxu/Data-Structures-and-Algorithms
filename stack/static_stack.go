@@ -39,10 +39,6 @@ func (s *StaticStack) Peek() (interface{}, bool) {
 	return s.space[s.top-1], true
 }
 
-func (s *StaticStack) IsEmpty() bool {
-	return s.top == 0
-}
-
 func (s *StaticStack) Clear() {
 	s.top = 0
 }
