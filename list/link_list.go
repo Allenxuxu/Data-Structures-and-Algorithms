@@ -124,6 +124,6 @@ func (l *LinkList) Find(v interface{}) (int, bool) {
 	return -1, false
 }
 
-func (l *LinkList) Len() int {
+func (l *LinkList) Length() int {
 	return l.length
 }

@@ -39,7 +39,7 @@ func TestLinkList(t *testing.T) {
 			t.Fatal()
 		}
 
-		if linkList.Len() != 0 {
+		if linkList.Length() != 0 {
 			t.Fatal()
 		}
 	}
@@ -93,7 +93,7 @@ func TestLinkList(t *testing.T) {
 			t.Fatal()
 		}
 
-		if linkList.Len() != 0 {
+		if linkList.Length() != 0 {
 			t.Fatal()
 		}
 	}
