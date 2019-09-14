@@ -38,7 +38,7 @@ func TestStaticStack_Push(t *testing.T) {
 	if v.(int) != 1 {
 		t.Fatal()
 	}
-	if s.Length() != 0 {
+	if s.Length() != 1 {
 		t.Fatal()
 	}
 	if s.Capacity() != 10 {
