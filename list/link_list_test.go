@@ -6,6 +6,15 @@ func TestLinkList(t *testing.T) {
 	linkList := LinkList{}
 
 	{
+		if linkList.Length() != 0 {
+			t.Fatal()
+		}
+		if _, ok := linkList.Get(0); ok != false {
+			t.Fatal()
+		}
+	}
+
+	{
 		for i := 0; i < 10; i++ {
 			linkList.PushBack(i)
 		}

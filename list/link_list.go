@@ -58,7 +58,7 @@ func (l *LinkList) Insert(i int, v interface{}) bool {
 }
 
 func (l *LinkList) Get(i int) (interface{}, bool) {
-	if i > l.length || i < 0 {
+	if i >= l.length || i < 0 {
 		return nil, false
 	}
 
