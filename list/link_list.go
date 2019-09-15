@@ -127,3 +127,8 @@ func (l *LinkList) Find(v interface{}) (int, bool) {
 func (l *LinkList) Length() int {
 	return l.length
 }
+
+func (l *LinkList) Clear() {
+	l.head.next = nil
+	l.length = 0
+}
