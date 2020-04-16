@@ -3,7 +3,7 @@ package tree
 import (
 	"strings"
 
-	"github.com/Allenxuxu/Data-Structures-and-Algorithms/queue"
+	"github.com/Allenxuxu/dsa/queue"
 )
 
 type Element interface {

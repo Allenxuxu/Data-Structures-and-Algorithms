@@ -1,6 +1,6 @@
 package stack
 
-import "github.com/Allenxuxu/Data-Structures-and-Algorithms/list"
+import "github.com/Allenxuxu/dsa/list"
 
 // LinkStack 链表实现的堆栈
 type LinkStack struct {

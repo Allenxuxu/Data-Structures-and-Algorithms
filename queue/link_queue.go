@@ -1,6 +1,6 @@
 package queue
 
-import "github.com/Allenxuxu/Data-Structures-and-Algorithms/list"
+import "github.com/Allenxuxu/dsa/list"
 
 type LinkQueue struct {
 	space list.LinkList
