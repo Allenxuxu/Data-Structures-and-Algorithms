@@ -19,39 +19,53 @@ func (t TreeNode) String() string {
 }
 
 func TestBinaryTree_Insert(t *testing.T) {
-	tree1 := NewBinaryTree()
+	tree := NewBinaryTree()
 
-	if !tree1.Insert(TreeNode(3)) {
+	if !tree.Insert(TreeNode(3)) {
 		t.Fatal()
 	}
-	if !tree1.Insert(TreeNode(-1)) {
+	if !tree.Insert(TreeNode(-1)) {
 		t.Fatal()
 	}
-
-	if !tree1.Insert(TreeNode(2)) {
-		t.Fatal(tree1.String())
+	if !tree.Insert(TreeNode(2)) {
+		t.Fatal(tree.String())
+	}
+	if !tree.Insert(TreeNode(5)) {
+		t.Fatal(tree.String())
+	}
+	//       3
+	//  -1      5
+	//     2
+	q := queue.NewLinkQueue()
+	tree.LevelTraversal(tree.root, q)
+	length := q.Length()
+	var result []int
+	for i := 0; i < length; i++ {
+		v, ok := q.Pop()
+		if !ok {
+			t.Fatal()
+		}
+		result = append(result, int(v.(TreeNode)))
 	}
 
-	if !tree1.Insert(TreeNode(5)) {
-		t.Fatal(tree1.String())
-	}
+	assert.Equal(t, []int{3, -1, 5, 2}, result)
 
-	node := tree1.find(TreeNode(-1))
+	node := tree.find(TreeNode(-1))
 	if node == nil {
 		t.Fatal()
 	}
 
-	max := tree1.Max()
+	max := tree.Max()
 	if max != TreeNode(5) {
 		t.Fatal()
 	}
-	min := tree1.Min()
+	min := tree.Min()
 	if min != TreeNode(-1) {
 		t.Fatal()
 	}
 
-	tree1.Delete(TreeNode(5))
-	t.Log(tree1)
+	tree.Delete(TreeNode(5))
+	t.Log(tree)
 }
 
 func TestBinaryTree_PreOrderTraversal(t *testing.T) {
@@ -136,4 +150,31 @@ func TestBinaryTree_PostOrderTraversal(t *testing.T) {
 	}
 
 	assert.Equal(t, []int{3, 4, 1, 6, 5}, result)
+}
+
+func TestBinaryTree_LevelTraversal(t *testing.T) {
+	tree := NewBinaryTree()
+
+	data := []int{5, 1, 4, 3, 6}
+	//       5
+	//  1       6
+	//     4
+	//  3
+	for i := 0; i < len(data); i++ {
+		tree.Insert(TreeNode(data[i]))
+	}
+
+	q := queue.NewLinkQueue()
+	tree.LevelTraversal(tree.root, q)
+	length := q.Length()
+	var result []int
+	for i := 0; i < length; i++ {
+		v, ok := q.Pop()
+		if !ok {
+			t.Fatal()
+		}
+		result = append(result, int(v.(TreeNode)))
+	}
+
+	assert.Equal(t, []int{5, 1, 6, 4, 3}, result)
 }
