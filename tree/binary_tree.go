@@ -203,3 +203,27 @@ func (t *BinaryTree) String() string {
 
 	return strings.Join(ret, ",")
 }
+
+func (t *BinaryTree) PreOrderTraversal(node *Node, q *queue.LinkQueue) {
+	if node != nil {
+		q.Push(node.data)
+		t.PreOrderTraversal(node.left, q)
+		t.PreOrderTraversal(node.right, q)
+	}
+}
+
+func (t *BinaryTree) InOrderTraversal(node *Node, q *queue.LinkQueue) {
+	if node != nil {
+		t.InOrderTraversal(node.left, q)
+		q.Push(node.data)
+		t.InOrderTraversal(node.right, q)
+	}
+}
+
+func (t *BinaryTree) PostOrderTraversal(node *Node, q *queue.LinkQueue) {
+	if node != nil {
+		t.PostOrderTraversal(node.left, q)
+		t.PostOrderTraversal(node.right, q)
+		q.Push(node.data)
+	}
+}
