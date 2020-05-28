@@ -6,9 +6,9 @@
 package heap_test
 
 import (
-	"github.com/Allenxuxu/dsa/heap"
-
 	"fmt"
+
+	"github.com/Allenxuxu/dsa/heap"
 )
 
 // An IntHeap is a min-heap of ints.

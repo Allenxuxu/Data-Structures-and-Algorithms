@@ -6,9 +6,9 @@
 package heap_test
 
 import (
-	"github.com/Allenxuxu/dsa/heap"
-
 	"fmt"
+
+	"github.com/Allenxuxu/dsa/heap"
 )
 
 // An Item is something we manage in a priority queue.
