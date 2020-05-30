@@ -16,7 +16,7 @@
 //
 package heap
 
-import "sort"
+import "github.com/Allenxuxu/dsa/sort"
 
 // The Interface type describes the requirements
 // for a type using the routines in this package.
