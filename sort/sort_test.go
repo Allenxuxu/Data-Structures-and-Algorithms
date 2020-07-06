@@ -34,10 +34,30 @@ func TestInsertSort(t *testing.T) {
 	}
 }
 
+func TestInsertSort1(t *testing.T) {
+	data := ints
+	a := IntSlice(data[0:])
+	InsertSort1(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", ints)
+		t.Errorf("   got %v", data)
+	}
+}
+
 func TestBubbleSort(t *testing.T) {
 	data := ints
 	a := IntSlice(data[0:])
 	BubbleSort(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", ints)
+		t.Errorf("   got %v", data)
+	}
+}
+
+func TestBubbleSort1(t *testing.T) {
+	data := ints
+	a := IntSlice(data[0:])
+	BubbleSort1(a)
 	if !IsSorted(a) {
 		t.Errorf("sorted %v", ints)
 		t.Errorf("   got %v", data)

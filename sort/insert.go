@@ -11,3 +11,21 @@ func InsertSort(data Interface) {
 		}
 	}
 }
+
+// 优化：减少交换
+func InsertSort1(data []int) {
+	for i := 1; i < len(data); i++ {
+		tmp := data[i]
+		index := i
+		for j := i; j > 0; j-- {
+			if data[j-1] < tmp {
+				break
+			}
+
+			data[j] = data[j-1]
+			index = j - 1
+		}
+
+		data[index] = tmp
+	}
+}
