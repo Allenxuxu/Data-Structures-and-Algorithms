@@ -14,6 +14,36 @@ func TestSortIntSlice(t *testing.T) {
 	}
 }
 
+func TestSelectSort(t *testing.T) {
+	data := ints
+	a := IntSlice(data[0:])
+	SelectSort(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", ints)
+		t.Errorf("   got %v", data)
+	}
+}
+
+func TestInsertSort(t *testing.T) {
+	data := ints
+	a := IntSlice(data[0:])
+	InsertSort(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", ints)
+		t.Errorf("   got %v", data)
+	}
+}
+
+func TestBubbleSort(t *testing.T) {
+	data := ints
+	a := IntSlice(data[0:])
+	BubbleSort(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", ints)
+		t.Errorf("   got %v", data)
+	}
+}
+
 // IsSorted reports whether data is sorted.
 func IsSorted(data Interface) bool {
 	n := data.Len()
