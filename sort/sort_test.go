@@ -64,6 +64,26 @@ func TestBubbleSort1(t *testing.T) {
 	}
 }
 
+func TestQuickSort1(t *testing.T) {
+	data := ints
+	a := IntSlice(data[0:])
+	QuickSort1(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", ints)
+		t.Errorf("   got %v", data)
+	}
+}
+
+func TestQuickSort(t *testing.T) {
+	data := ints
+	a := IntSlice(data[0:])
+	QuickSort(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", ints)
+		t.Errorf("   got %v", data)
+	}
+}
+
 // IsSorted reports whether data is sorted.
 func IsSorted(data Interface) bool {
 	n := data.Len()
