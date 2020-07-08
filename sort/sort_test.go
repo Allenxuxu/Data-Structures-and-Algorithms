@@ -102,6 +102,92 @@ func TestShellSort(t *testing.T) {
 		t.Errorf("sorted %v", ints)
 		t.Errorf("   got %v", data)
 	}
+
+	tmp := [...]int{1}
+	a = IntSlice(tmp[0:])
+	ShellSort(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", tmp)
+		t.Errorf("   got %v", data)
+	}
+
+	{
+		tmp := [...]int{2, 1}
+		a = IntSlice(tmp[0:])
+		ShellSort(a)
+		if !IsSorted(a) {
+			t.Errorf("sorted %v", tmp)
+			t.Errorf("   got %v", data)
+		}
+	}
+
+	{
+		tmp := [...]int{2, 1, 3}
+		a = IntSlice(tmp[0:])
+		ShellSort(a)
+		if !IsSorted(a) {
+			t.Errorf("sorted %v", tmp)
+			t.Errorf("   got %v", data)
+		}
+	}
+
+	{
+		tmp := [...]int{0, 1, 3, 4}
+		a = IntSlice(tmp[0:])
+		ShellSort(a)
+		if !IsSorted(a) {
+			t.Errorf("sorted %v", tmp)
+			t.Errorf("   got %v", data)
+		}
+	}
+}
+
+func TestShellSort1(t *testing.T) {
+	data := ints
+	a := IntSlice(data[0:])
+	ShellSort1(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", ints)
+		t.Errorf("   got %v", data)
+	}
+
+	tmp := [...]int{1}
+	a = IntSlice(tmp[0:])
+	ShellSort1(a)
+	if !IsSorted(a) {
+		t.Errorf("sorted %v", tmp)
+		t.Errorf("   got %v", data)
+	}
+
+	{
+		tmp := [...]int{2, 1}
+		a = IntSlice(tmp[0:])
+		ShellSort1(a)
+		if !IsSorted(a) {
+			t.Errorf("sorted %v", tmp)
+			t.Errorf("   got %v", data)
+		}
+	}
+
+	{
+		tmp := [...]int{2, 1, 3}
+		a = IntSlice(tmp[0:])
+		ShellSort1(a)
+		if !IsSorted(a) {
+			t.Errorf("sorted %v", tmp)
+			t.Errorf("   got %v", data)
+		}
+	}
+
+	{
+		tmp := [...]int{0, 1, 3, 4}
+		a = IntSlice(tmp[0:])
+		ShellSort1(a)
+		if !IsSorted(a) {
+			t.Errorf("sorted %v", tmp)
+			t.Errorf("   got %v", data)
+		}
+	}
 }
 
 // IsSorted reports whether data is sorted.
