@@ -34,7 +34,6 @@ func QuickSort1(data []int) {
 	head, tail := 0, len(data)-1
 	for head < tail {
 		if data[head] < mid {
-			data[head], data[head] = data[head], data[head]
 			head++
 		} else {
 			data[head], data[tail] = data[tail], data[head]
