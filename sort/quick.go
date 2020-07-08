@@ -31,17 +31,17 @@ func QuickSort1(data []int) {
 	}
 
 	mid := data[0]
-	head, tail := 0, len(data)-1
-	for head < tail {
-		if data[head] < mid {
-			head++
+	i, j := 0, len(data)-1
+	for i < j {
+		if data[i] < mid {
+			i++
 		} else {
-			data[head], data[tail] = data[tail], data[head]
-			tail--
+			data[i], data[j] = data[j], data[i]
+			j--
 		}
 	}
 
-	data[head] = mid
-	QuickSort1(data[:head])
-	QuickSort1(data[head+1:])
+	data[i] = mid
+	QuickSort1(data[:i])
+	QuickSort1(data[i+1:])
 }
