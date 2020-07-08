@@ -32,13 +32,12 @@ func QuickSort1(data []int) {
 
 	mid := data[0]
 	head, tail := 0, len(data)-1
-	for i := 0; head < tail; {
-		if data[i] < mid {
-			data[i], data[head] = data[head], data[i]
+	for head < tail {
+		if data[head] < mid {
+			data[head], data[head] = data[head], data[head]
 			head++
-			i++
 		} else {
-			data[i], data[tail] = data[tail], data[i]
+			data[head], data[tail] = data[tail], data[head]
 			tail--
 		}
 	}
